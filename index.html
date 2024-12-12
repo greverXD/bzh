@@ -851,7 +851,7 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
     Время подхода облака АХОВ к заданному объекту зависит от скорости переноса переднего фронта облака загрязненного воздуха и определяется из соотношения:
     <p>t<sub>n</sub> = X/บ,
     (16)
-    <p>где 1, - время подхода загрязненного облака, ч; Х - расстояние от источника загрязнения до заданного объекта, км; и - скорость переноса переднего фронта облака загрязненного воздуха, км/ч.
+    <p>где บ - время подхода загрязненного облака, ч; Х - расстояние от источника загрязнения до заданного объекта, км; и - скорость переноса переднего фронта облака загрязненного воздуха, км/ч.
     <h4>3.6. Определение продолжительности поражающего действия
     АХОВ</h4>
     Продолжительность поражающего действия АХОВ определяет-ся временем его испарения с площади разлива. Время испарения АХОВ с площади разлива определяется по формуле:
@@ -1124,7 +1124,71 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
         </tr>
     </tbody>
 </table>
+<table>
+    <caption>Определение степени вертикальной устойчивости воздуха по прогнозу погоды</caption>
+    <thead>
+        <tr>
+            <th rowspan="2">Скорость ветра м/с</th>
+            <th colspan="2">Ночь</th>
+            <th colspan="2">Утро</th>
+            <th colspan="2">День</th>
+            <th colspan="2">Вечер</th>
 
+        </tr>
+        <tr>
+            <th>Ясно,переменная облачность</th>
+            <th>Сплошная облачность</th>
+            <th>Ясно,переменная облачность</th>
+            <th>Сплошная облачность</th>
+            <th>Ясно,переменная облачность</th>
+            <th>Сплошная облачность</th>
+            <th>Ясно,переменная облачность</th>
+            <th>Сплошная облачность </th>
+
+        </tr>
+    </thead>
+    <tbody id="table1-body">
+        <tr>
+            <td>Менее 2</td>
+            <td>ин</td>
+            <td>из</td>
+            <td>из (ин)</td>
+            <td>из</td>
+            <td>к (из)</td>
+            <td>из</td>
+            <td>ин</td>
+            <td>из</td>
+
+        </tr>
+        <tr>
+            <td>2 - 3.9 </td>
+            <td>ин</td>
+            <td>из</td>
+            <td>из (ин)</td>
+            <td>из</td>
+            <td>к (из)</td>
+            <td>из</td>
+            <td>ин</td>
+            <td>из</td>
+
+        </tr>
+        <tr>
+            <td>4 и более</td>
+            <td>ин</td>
+            <td>из</td>
+            <td>из (ин)</td>
+            <td>из</td>
+            <td>к (из)</td>
+            <td>из</td>
+            <td>ин</td>
+            <td>из</td>
+
+        </tr>
+
+    </tbody>
+    
+</table>
+Ин - инверсия ; Из - изотермия ; к - конвекция ; Буквы в скобках - при снежном покрове
     <div class="kthree" style="margin: 10px;">
         <h4>Инверсия </h4>
         <h4>Изометрия</h4>
@@ -1308,33 +1372,33 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
                 <td>0.05</td>
                 <td>0.041</td>
                 <td>0.27</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td>0.1</td>
+                <td>0.3</td>
+                <td>0.7</td>
                 <td>1</td>
-                <td>3.2</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Сернистый ангидрид</td>
                 <td>0.11</td>
                 <td>0.049</td>
                 <td>0.333</td>
-                <td>0</td>
-                <td>0</td>
+                <td>0.2</td>
                 <td>0.3</td>
                 <td>1</td>
-                <td>1.7</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Сероводород</td>
                 <td>0.27</td>
                 <td>0.042</td>
                 <td>0.036</td>
-                <td>0.3</td>
-                <td>0.5</td>
-                <td>0.8</td>
                 <td>1</td>
-                <td>1.2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Сероуглерод</td>
@@ -1364,32 +1428,32 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
                 <td>0.034</td>
                 <td>1</td>
                 <td>0.4</td>
-                <td>0</td>
-                <td>0.5</td>
                 <td>1</td>
-                <td>1.5</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Фосген</td>
                 <td>0.05</td>
                 <td>0.061</td>
                 <td>1</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td>0.1</td>
+                <td>0.3</td>
+                <td>0.7</td>
                 <td>1</td>
-                <td>2.7</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Хлор</td>
                 <td>0.18</td>
                 <td>0.052</td>
                 <td>1</td>
-                <td>0</td>
-                <td>0.3</td>
-                <td>0.6</td>
+                <td>0.9</td>
                 <td>1</td>
-                <td>1.4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Хлорциан</td>
@@ -1398,9 +1462,9 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
                 <td>0.8</td>
                 <td>0</td>
                 <td>0</td>
-                <td>0</td>
+                <td>0.6</td>
                 <td>1</td>
-                <td>3.9 </td>
+                <td>1</td>
             </tr>
         </tbody>
         <div class="sec">
@@ -1444,6 +1508,180 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
           </tbody>
           </div>
       </table>
+      <table>
+        <caption>Физические и токсические свойства АХОФ</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Наименование АХОВ</th>
+                <th colspan="2">Значения вспомогательных коэффициентов</th>
+                <th rowspan="2">K<sub>7</sub> для температуры воздуха, °C</th>
+                <th rowspan="2">K<sub>7</sub> для температуры воздуха, °C</th>
+            </tr>
+            <tr>
+                <th>K<sub>1</sub></th>
+                <th>K<sub>2</sub></th>
+                
+                
+   
+            </tr>
+        </thead>
+        <tbody id="table1-body">
+            <tr>
+                <td>Аммиак:<br>– хранение под давлением</td>
+                <td>0.0008</td>
+                <td>0.681</td>
+                <td>-33.42</td>
+                <td>15</td>
+  
+            </tr>
+            <tr>
+                <td>– изотермическое хранение</td>
+                <td>-</td>
+                <td>0.681</td>
+                <td>-33.42</td>
+                <td>15</td>
+
+            </tr>
+            <tr>
+                <td>Ацетонциангидрин</td>
+                <td>-</td>
+                <td>0.932</td>
+                <td>120</td>
+                <td>1.2</td>
+  
+            </tr>
+            <tr>
+                <td>Водород:<br>– фтористый</td>
+                <td>-</td>
+                <td>0.989</td>
+                <td>19.52</td>
+                <td>4</td>
+  
+            </tr>
+            <tr>
+                <td>– хлористый</td>
+                <td>0.0016</td>
+                <td>1.191</td>
+                <td>-85.1</td>
+                <td>2</td>
+
+            </tr>
+            <tr>
+                <td>– цианистный</td>
+                <td>-</td>
+                <td>0.687</td>
+                <td>25.7</td>
+                <td>0.2</td>
+
+            </tr>
+
+            <tr>
+                <td>Диметиламин</td>
+                <td>0.002</td>
+                <td>0.68</td>
+                <td>6.9</td>
+                <td>1.2</td>
+  
+            </tr>
+            <tr>
+                <td>Метил:<br>– бромистый</td>
+                <td>-</td>
+                <td>1.732</td>
+                <td>3.6</td>
+                <td>1.2</td>
+  
+            </tr>
+            <tr>
+                <td>– хлористый</td>
+                <td>0.0023</td>
+                <td>0.983</td>
+                <td>-23.76</td>
+                <td>10.8</td>
+
+            </tr>
+            <tr>
+                <td>– меркаптан</td>
+                <td>-</td>
+                <td>0.867</td>
+                <td>5.95</td>
+                <td>1.7</td>
+
+            </tr>
+            <tr>
+                <td>Нитрил акриловой кислоты</td>
+                <td>-</td>
+                <td>0.806</td>
+                <td>77.3</td>
+                <td>0.75</td>
+  
+            </tr>
+            <tr>
+                <td>Оксид азота</td>
+                <td>-</td>
+                <td>1.491</td>
+                <td>21</td>
+                <td>1.5</td>
+  
+            </tr>
+            <tr>
+                <td>Оксись этилена</td>
+                <td>-</td>
+                <td>0.882</td>
+                <td>10.7</td>
+                <td>2.2</td>
+  
+            </tr>
+            <tr>
+                <td>Сернистый ангидрид</td>
+                <td>0.0029</td>
+                <td>1.462</td>
+                <td>-10.1</td>
+                <td>1.8</td>
+  
+            </tr>
+            <tr>
+                <td>Сероводород</td>
+                <td>0.0015</td>
+                <td>0.964</td>
+                <td>-60.35</td>
+                <td>16.1</td>
+  
+            </tr>
+            <tr>
+                <td>Сероуглерод</td>
+                <td>-</td>
+                <td>1.263</td>
+                <td>46.2</td>
+                <td>45</td>
+  
+            </tr>
+            <tr>
+                <td>Соляная кислота</td>
+                <td>-</td>
+                <td>1.198</td>
+                <td>-</td>
+                <td>2</td>
+  
+            </tr>
+            <tr>
+                <td>Формальдегид</td>
+                <td>-</td>
+                <td>0.815</td>
+                <td>-19</td>
+                <td>0.6</td>
+  
+            </tr>
+            <tr>
+                <td>Хлор</td>
+                <td>-</td>
+                <td>1.558</td>
+                <td>-34.1</td>
+                <td>0.18</td>
+  
+            </tr>
+        </tbody>
+    </table>
+
     <div class="kthree1" style="margin: 10px;">
         <h4>Инверсия </h4>
         <h4>Изометрия</h4>
@@ -1451,6 +1689,7 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
     </div>
          
 </div>
+
 <div style="display:flex; font-size: 30px; gap: 18px;">
     <div>K<sub>1</sub></div>* <div>K<sub>2</sub></div>* <div>K<sub>3</sub></div>* <div>K<sub>4</sub></div>* <div>K<sub>5</sub></div>* <div>K<sub>6</sub></div>* <div>K<sub>7</sub></div>*     <div class="fraction-container">
         <span class="bracket left-bracket">(</span>
@@ -1482,21 +1721,26 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
         <div class="fraction-wrapper">
             <input type="text" class="numerator">
             <div class="fraction-line"></div>
-            <input type="text" class="denominator">
+            <div class="denominators-wrapper">
+                <input type="text" class="denominator">
+                <div style="display: flex;flex-direction: row;"><span>*</span></div>
+                <input type="text" class="denominator">
+            </div>
         </div>
         <span class="bracket right-bracket">)</span>
     </div>
+    
 
     <span class="rav2">=</span>
     <span class="result2"></span> 
 </div>
 
-<h3 id="sentence-3" class="sentence">Найти эквивалентное количество АХОВ по первичному облаку Q<sub>2</sub>,т</h3>
+<h3 id="sentence-3" class="sentence">Глубина зоны загрязнения, км</h3>
 <div class="window" id="block-3" class="block"> 
     <div class="num">
         <div style="display: flex;"><h4> Г<sub>1</sub> :</h4> <h4 class="g1"></h4></div>
         <div style="display: flex;"><h4>Г<sub>2</sub> :</h4> <h4 class="g2"></h4></div>
-        <div style="display: flex;"><h4>Г<sub>3</sub> :</h4> <h4 class="g3"></h4></div>
+        <div style="display: flex;"><h4>Г<sub>общ</sub> :</h4> <h4 class="g3"></h4></div>
        
     </div>    
 
@@ -1753,10 +1997,10 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
 <div class="input-wrapper5" >
     <div class="row"><div>Г<sub>1</sub></div><input type="text" class="inputs5"></div>
     <div class="row"> <div>Г<sub>2</sub></div><input type="text" class="inputs5"></div>
-    <div class="row"> <div>Г<sub>3</sub></div><input type="text" class="inputs5"></div>
+    <div class="row"> <div>Г<sub>общ</sub></div><input type="text" class="inputs5"></div>
 
 </div>
-<h3 id="sentence-4" class="sentence">Найти эквивалентное количество АХОВ по первичному облаку Q<sub>2</sub>,т</h3>
+<h3 id="sentence-4" class="sentence">Площадь зоны фактического загрязнения АХОВ, км<sup>2</sup>/h3>
 <div class="window" id="block-2" class="block"> 
     <div class="num">
         <div style="display: flex;"><h4> K<sub>1</sub> :</h4> <h4 class="v1"></h4></div>
@@ -1847,13 +2091,13 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
     <span class="rav4">=</span>
     <span class="result4"></span> 
 </div>
-<h3>Найти эквивалентное количество АХОВ по первичному облаку Q<sub>2</sub>,т</h3>
+<h3>Время подхода загрязненного воздуха к заданному объекту, смотри Таблица 6</h3>
 <div style="display:flex; font-size: 30px; ">
-    <div style="display: flex;flex-direction: row;gap: 30px;"><div>X</div> / <div>V</div></div>
+    <div style="display: flex;flex-direction: row;gap: 30px;"><div>X</div> / <div>บ = t<sub>n</sub></div></div>
 </div>
 <div class="input-wrapper3">
     <input type="text" class="inputs2">
-    <span>*</span>
+    <span>/</span>
     <input type="text" class="inputs2">
 
 
@@ -1861,8 +2105,8 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
     <span class="rav3">=</span>
     <span class="result3"></span> 
 </div>
-
-<h3 id="sentence-5" class="sentence">Найти эквивалентное количество АХОВ по первичному облаку Q<sub>2</sub>,т</h3>
+ 
+<h3 id="sentence-5" class="sentence">Продолжительность поражающего действия АХОВ, ч</h3>
 <div class="window" id="block-5" class="block"> 
     <div class="num">
         <div style="display: flex;"><h4> K<sub>1</sub> :</h4> <h4 class="f1"></h4></div>
@@ -2018,33 +2262,33 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
                 <td>0.05</td>
                 <td>0.041</td>
                 <td>0.27</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td>0.1</td>
+                <td>0.3</td>
+                <td>0.7</td>
                 <td>1</td>
-                <td>3.2</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Сернистый ангидрид</td>
                 <td>0.11</td>
                 <td>0.049</td>
                 <td>0.333</td>
-                <td>0</td>
-                <td>0</td>
+                <td>0.2</td>
                 <td>0.3</td>
                 <td>1</td>
-                <td>1.7</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Сероводород</td>
                 <td>0.27</td>
                 <td>0.042</td>
                 <td>0.036</td>
-                <td>0.3</td>
-                <td>0.5</td>
-                <td>0.8</td>
                 <td>1</td>
-                <td>1.2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Сероуглерод</td>
@@ -2074,32 +2318,32 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
                 <td>0.034</td>
                 <td>1</td>
                 <td>0.4</td>
-                <td>0</td>
-                <td>0.5</td>
                 <td>1</td>
-                <td>1.5</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Фосген</td>
                 <td>0.05</td>
                 <td>0.061</td>
                 <td>1</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td>0.1</td>
+                <td>0.3</td>
+                <td>0.7</td>
                 <td>1</td>
-                <td>2.7</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Хлор</td>
                 <td>0.18</td>
                 <td>0.052</td>
                 <td>1</td>
-                <td>0</td>
-                <td>0.3</td>
-                <td>0.6</td>
+                <td>0.9</td>
                 <td>1</td>
-                <td>1.4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Хлорциан</td>
@@ -2108,9 +2352,9 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
                 <td>0.8</td>
                 <td>0</td>
                 <td>0</td>
-                <td>0</td>
+                <td>0.6</td>
                 <td>1</td>
-                <td>3.9 </td>
+                <td>1</td>
             </tr>
         </tbody>
         <div class="sec">
@@ -2156,10 +2400,15 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
       </table> 
 </div>
 <div style="display:flex; font-size: 30px; gap: 18px;">
-    <div>(K<sub>2</sub></div>* <div style="display: flex;flex-direction: row;">K<div><sub>4</sub></div></div>* <div style="display: flex;flex-direction: row;">K<div><sub>7</sub>)</div></div>
-    <div>/</div><div style="display: flex;flex-direction: row; gap: 18px;"><div>(h</div> *<div> d)</div></div> =<div> S<sub>ф</sub></div>
+<div>(h</div> *<div> d)</div> *<div>(K<sub>2</sub></div>* <div style="display: flex;flex-direction: row;">K<div><sub>4</sub></div></div>* <div style="display: flex;flex-direction: row;">K<div><sub>7</sub>)</div></div>
+<div>/</div><div style="display: flex;flex-direction: row; gap: 18px;"></div> =<div> T</div>
 </div> 
 <div class="input-wrapper4">
+        <span class="bracket left-bracket">(</span>
+    <input type="text" class="inputs4">
+    <span>*</span>
+    <input type="text" class="inputs4">
+    <span class="bracket left-bracket">)</span>
     <span class="bracket left-bracket">(</span>
     <input type="text" class="inputs4">
     <span>*</span>
@@ -2168,11 +2417,7 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
     <input type="text" class="inputs4">
     <span class="bracket left-bracket">)</span>
     <span>*</span>
-    <span class="bracket left-bracket">(</span>
-    <input type="text" class="inputs4">
-    <span>*</span>
-    <input type="text" class="inputs4">
-    <span class="bracket left-bracket">)</span>
+
 
 
 
@@ -2184,7 +2429,7 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
 
 
 
-<h3 id="sentence-6" class="sentence">Найти эквивалентное количество АХОВ по первичному облаку Q<sub>2</sub>,т</h3>
+<h3 id="sentence-6" class="sentence">Возможные потери людей</h3>
 <div class="window" id="block-6" class="block"> 
   
 
@@ -2237,7 +2482,7 @@ h - толщина слоя АХОВ, м; d - плотность АХОВ, т/м
             </tr>
         </tbody>
     </table>
-
+   Дробные значения относится к группе смертельного исхода
     <div class="input-container">
         <label for="inputValue">Введите значение: </label>
         <input type="number" id="inputValue">

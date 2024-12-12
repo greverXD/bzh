@@ -145,9 +145,9 @@ blocks.forEach((block, blockIndex) => {
                                                 const cellIndex = Array.from(event.target.parentNode.children).indexOf(event.target);
                                                 const cellValue = event.target.textContent.trim();
         
-                                                block2Vars[cellIndex - 1] = cellValue;
+                                                block3Vars[cellIndex - 1] = cellValue;
 
-                                                f1.textContent = block2Vars[1];
+                                                f1.textContent = block3Vars[1];
                                                 console.log(f1.textContent)
                                                 
                                                 if (cellIndex >= 4 && cellIndex <= 8) {
@@ -166,7 +166,7 @@ blocks.forEach((block, blockIndex) => {
                                                 const cellIndex = Array.from(event.target.parentNode.children).indexOf(event.target);
                                                 const cellValue = event.target.textContent.trim();
         
-                                                block2Vars[cellIndex - 1] = cellValue;
+                                                block3Vars[cellIndex - 1] = cellValue;
                                                 f2.textContent = event.target.textContent;
                                                 console.log(f2.textContent)
                                             }
@@ -193,8 +193,8 @@ blocks.forEach((block, blockIndex) => {
 function handleKthreeClick() {
     let kthree = document.querySelectorAll(".kthree h4");
     let kthree1 = document.querySelectorAll(".kthree1 h4");
-    let numbers = [0.23, 0.7, 0.8];
-    let numbers1 = [0.23, 0.7, 0.8];
+    let numbers = [1, 0.23, 0.08];
+    let numbers1 = [1, 0.23, 0.08];
     kthree.forEach((element, index) => {
         element.onclick = () => {
             let kone = numbers[index];
@@ -264,7 +264,7 @@ function handleRavClick() {
             result.textContent = product !== undefined ? product : 0;
             QOne = result.textContent;
             console.log(QOne);
-            header()
+            header(result);
         };
     }
 
@@ -276,8 +276,8 @@ function handleRav2Click() {
     let rav2 = document.querySelector(".rav2");
     let inputs = document.querySelectorAll(".input-wrapper2 .inputs2");
     let result = document.querySelector(".result2");
-    let numeratorInput = document.querySelector(".numerator");
-    let denominatorInput = document.querySelector(".denominator");
+    let numeratorInputs = document.querySelectorAll(".numerator");
+    let denominatorInputs = document.querySelectorAll(".denominator");
 
     function calculate() {
         rav2.onclick = () => {
@@ -287,26 +287,32 @@ function handleRav2Click() {
             if (inputs.length > 0) {
                 let firstInputValue = Number(inputs[0].value);
                 if (firstInputValue !== "" && !isNaN(firstInputValue)) {
-                    inputs[0].value = firstInputValue - 1;
+                    inputs[0].value = firstInputValue < 1 ? 1 - firstInputValue : firstInputValue - 1;
                 }
-                
             }
 
-            // Получаем значение дроби (числитель / знаменатель)
-            let numerator = Number(numeratorInput.value);
-            let denominator = Number(denominatorInput.value);
-            let fractionValue = 0;
+            // Получаем значение дроби (числители / знаменатели)
+            let numeratorProduct = 1;
+            numeratorInputs.forEach(numeratorInput => {
+                let numerator = Number(numeratorInput.value);
+                if (!isNaN(numerator) && numerator !== 0) {
+                    numeratorProduct *= numerator;
+                }
+            });
 
-            if (!isNaN(numerator) && !isNaN(denominator) && denominator !== 0) {
-                fractionValue = numerator / denominator;
-            } else {
-                fractionValue = 1;  // Если деление невозможно, принимаем 1 (или можно поставить любое другое значение по умолчанию)
-            }
+            let denominatorProduct = 1;
+            denominatorInputs.forEach(denominatorInput => {
+                let denominator = Number(denominatorInput.value);
+                if (!isNaN(denominator) && denominator !== 0) {
+                    denominatorProduct *= denominator;
+                }
+            });
+
+            let fractionValue = numeratorProduct / denominatorProduct;
 
             // Умножаем дробь на остальные значения
             for (let i = 0; i < inputs.length; i++) {
                 let value = Number(inputs[i].value);
-
                 if (!isNaN(value) && value !== 0) {
                     product *= value;
                 }
@@ -326,6 +332,7 @@ function handleRav2Click() {
 
 
 
+
 function handleRav3Click() {
     let rav = document.querySelector(".rav3");
     let inputs = document.querySelectorAll(".input-wrapper3 input"); 
@@ -342,7 +349,7 @@ function handleRav3Click() {
                     if (product === undefined) {
                         product = value; 
                     } else {
-                        product *= value; 
+                        product /= value; 
                     }
                 }
             }
@@ -384,13 +391,13 @@ function handleRav4Click() {
             let exp2 = 1;
             inputs1.forEach((input, index) => {
                 const value = Number(input.value)
-                if(index < 3){
+                if(index < 2){
                     exp1 *= value;
                 } else{
                     exp2 *= value;
                 }
             });
-            const product1 = exp1 * exp2;
+            const product1 = exp1 / exp2;
             result1.textContent = isNaN(product1) ? 0 : product1;
         }
     }
@@ -418,12 +425,7 @@ function checkNumsContent() {
         input2.style.transform = 'translateX(2010px)';
         input2.style.position = 'relative';
     }
-    if (fs.every(f => !!f.textContent.trim())) {
-        windowdiv.style.transform = 'translateX(-1010px)';
-        windowdiv.style.position = 'absolute';
-        input4.style.transform = 'translateX(2010px)';
-        input4.style.position = 'relative';
-    }
+
     if (!!v1.textContent.trim()) {
         windowdiv.style.transform = 'translateX(-1010px)';
         windowdiv.style.position = 'absolute';
@@ -451,33 +453,82 @@ function setNumsInInputs() {
         });
     }
 
-    if(inputs4.length >= 3){
+    if (inputs4.length >= 3) {
         inputs4.forEach((input, index) => {
-            if (fs[index]) {
-                input.value = fs[index].textContent; // Устанавливаем значение только для существующих элементов
-            } else {
-                input.value = ''; // Оставляем пустое поле для пользовательского ввода
+            if (index >= 2) {
+                if (fs[index - 2]) {
+                    input.value = fs[index - 2].textContent; 
+                } else {
+                    input.value = ''; 
+                }
             }
         });
     }
+    
 }
 
+
+let clickCount = 0;
+
+function handleRavClick() {
+    let rav = document.querySelector(".rav");
+    let inputs = document.querySelectorAll(".input-wrapper1 input");
+    let result = document.querySelector(".result");
+
+    function calculate() {
+        rav.onclick = () => {
+            let product = 1; // Инициализируем product как 1
+
+            inputs.forEach(input => {
+                let value = Number(input.value);
+                if (!isNaN(value) && value !== 0) {
+                    product *= value; 
+                }
+            });
+
+            result.textContent = product !== undefined ? product : 0;
+            QOne = Number(result.textContent);
+            console.log(`QOne: ${QOne}`);
+            header();
+        };
+    }
+
+    calculate();
+}
 
 function header() {
     const table = document.getElementById("block-3");
     const columnHeaders = Array.from(table.querySelectorAll("thead tr:nth-child(2) th"));
+    let clickCount = 0; // Глобальный счётчик кликов
+    let calculatedNumberOne = null; // Переменная для хранения рассчитанного numberOne
+
     table.querySelectorAll("tbody td").forEach(cell => {
+        cell.dataset.clicked = "false"; // Отслеживание состояния ячейки
+
         cell.addEventListener("click", () => {
             const row = cell.closest("tr");
-            const rowName = row.querySelector("td:first-child").innerText; 
+            const rowName = row.querySelector("td:first-child").innerText;
             const cellIndex = Array.from(cell.parentNode.children).indexOf(cell);
-            const columnHeader = columnHeaders[cellIndex - 1]?.innerText; 
-            let numberOne = (Number(rowName) * Number(columnHeader)) / QOne;
-            let numberTwo = (Number(rowName) * Number(columnHeader)) / QTwo;
-            let resultNumber = Number(numberTwo + (0.5 * numberOne));
-            g1.textContent = numberOne.toFixed(5);
-            g2.textContent = numberTwo.toFixed(5);
-            g3.textContent = resultNumber.toFixed(5);
+            const columnHeader = Number(columnHeaders[cellIndex - 1]?.innerText);
+            const cellValue = Number(cell.innerText); // Получаем значение ячейки
+
+            // Вычисления выполняются только один раз
+            if (cell.dataset.clicked === "false") {
+                calculatedNumberOne = (QOne * cellValue) / columnHeader;
+                cell.dataset.clicked = "true"; // Устанавливаем, что расчёт выполнен для этой ячейки
+            }
+
+            const numberTwo = (QTwo * cellValue) / columnHeader;
+            clickCount++;
+
+            if (clickCount === 1) {
+                g1.textContent = calculatedNumberOne.toFixed(5);
+            } else if (clickCount === 2) {
+                g2.textContent = numberTwo.toFixed(5);
+                const resultNumber = numberTwo + (calculatedNumberOne / 2);
+                g3.textContent = resultNumber.toFixed(5);
+            }
+
             const inputs5 = document.querySelectorAll(".input-wrapper5 .inputs5");
             if (inputs5.length === 3) {
                 inputs5[0].value = g1.textContent;
@@ -487,6 +538,9 @@ function header() {
         });
     });
 }
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const inputValue = document.getElementById('inputValue');
     const difference = document.getElementById('difference');
@@ -498,20 +552,19 @@ document.addEventListener('DOMContentLoaded', () => {
         cell.addEventListener('click', () => {
             const cellValue = Number(cell.textContent);
             const inputNumber = Number(inputValue.value);
-            if (!isNaN(inputNumber)) {
-                const diff = inputNumber - cellValue;
-                const percent25 = (inputNumber * 0.25).toFixed(2);
-                const percent50 = (inputNumber * 0.40).toFixed(2);
-                const percent75 = (inputNumber * 0.35).toFixed(2);
+            if (!isNaN(inputNumber) && !isNaN(cellValue)) {
+                const cellPercentage = cellValue / 100;
+                const result = inputNumber * cellPercentage;
                 
-                difference.textContent = `Возможные потери людей: ${diff}`;
-                percentage25.textContent = `Легкая(25%) : ${percent25}`;
-                percentage50.textContent = `Средняя и тяжелая(40%): ${percent50}`;
-                percentage75.textContent = `Смертельный исход(35%): ${percent75}`;
+                difference.textContent = `Результат умножения: ${result.toFixed(2)}`;
+                percentage25.textContent = `Легкая(25%): ${(result * 0.25)}`;
+                percentage50.textContent = `Средняя и тяжелая(40%): ${(result * 0.40)}`;
+                percentage75.textContent = `Смертельный исход(35%): ${(result * 0.35)}`;
             }
         });
     });
 });
+
 
 
 function init() {
