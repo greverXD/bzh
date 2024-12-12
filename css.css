@@ -1,71 +1,207 @@
+/* Основные стили для текста */
 body {
- max-width: 1440px;
- z-index: 0;
- position: relative;
-}
-
-h1 {
-    color: #333;
-}
-
-table {
-    width: 50%;
-    height: 300px;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
-}
-
-th {
-    
-    height: 100px;
-    background-color: #f4b41a;
-    color: white;
-
-}
-
-td {
-    background-color: #fafafa;
-}
-
-tr:nth-child(even) td {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
     background-color: #f9f9f9;
+    color: #333;
+    max-width: 1440px;
+    z-index: 0;
+    position: relative;
 }
 
-tr:hover td {
-    background-color: #eaeaea;
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #003366;
+    margin: 20px 0;
 }
 
-.num{
-    display: flex; 
-    flex-direction: column; 
+h3 {
+    font-size: 1.5rem;
+    color: #00509e;
+    margin: 20px 0;
+}
+
+h4 {
+    font-size: 1.25rem;
+    color: #0077cc;
+    margin: 15px 0;
+}
+
+p {
+    margin: 10px 0;
+    padding: 0 10px;
+    text-align: justify;
+}
+
+ul {
+    margin: 10px 20px;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+/* Для формул и специальных обозначений */
+div {
+    margin: 10px 0;
+}
+
+sub, sup {
+    font-size: 0.75em;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.95rem;
+        padding: 0 5px;
+    }
+    ul {
+        margin: 10px 15px;
+        padding-left: 15px;
+    }
+    li {
+        font-size: 0.95rem;
+    }
+    table {
+        width: 100%;
+    }
+    .num {
+        flex-direction: column;
+        width: auto;
+        padding: 5px;
+    }
+    .window {
+        width: auto;
+        padding: 5px;
+    }
+    .input-wrapper1, .input-wrapper2 {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .fraction-container {
+        flex-direction: column;
+    }
+    .fraction-wrapper {
+        width: 100%;
+    }
+    .row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (min-width: 769px) {
+    p {
+        font-size: 1rem;
+    }
+    ul {
+        margin: 10px 25px;
+        padding-left: 25px;
+    }
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #00509e;
+    color: #fff;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Форматирование формул */
+.formula {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00509e;
+}
+
+/* Для сносок и мелкого текста */
+small {
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* Придание блочного вида */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Кнопки */
+button {
+    background-color: #00509e;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+.num {
+    display: flex;
+    flex-direction: column;
     height: auto;
     width: 100px;
     border: 1px solid black;
     padding: 10px;
-    margin: 10px; 
+    margin: 10px;
 }
 
 .num h4 {
-    margin: 5px 0; 
+    margin: 5px 0;
 }
-.window{
+
+.window {
     display: flex;
     position: absolute;
     z-index: 1;
     flex-direction: column;
     width: auto;
     height: auto;
-   left: -2000px;
-   border: 2px solid black;
-   box-shadow: 4px 2px 4px 2px;
+    left: -2500px;
+    border: 2px solid black;
+    box-shadow: 4px 2px 4px 2px;
 }
 
 .input-wrapper1, .input-wrapper2 {
@@ -74,9 +210,7 @@ tr:hover td {
     gap: 10px;
     position: absolute;
     z-index: 1;
-    left: -1000px; 
-
-
+    left: -2000px;
 }
 
 input {
@@ -90,9 +224,10 @@ input {
 span {
     font-size: 24px;
 }
-.window--visible{
-transform: translateX(2010px);
-position: relative;
+
+.window--visible {
+    transform: translateX(2510px);
+    position: relative;
 }
 
 .fraction-container {
@@ -129,19 +264,23 @@ position: relative;
     padding: 5px;
     box-sizing: border-box;
 }
-.input-wrapper5{
+
+.input-wrapper5 {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.row{
+
+.row {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;

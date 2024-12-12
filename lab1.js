@@ -409,25 +409,25 @@ function checkNumsContent() {
     if (nums.every(num => !!num.textContent.trim())) {
         windowdiv.style.transform = 'translateX(-1010px)';
         windowdiv.style.position = 'absolute';
-        input.style.transform = 'translateX(1010px)';
+        input.style.transform = 'translateX(2010px)';
         input.style.position = 'relative';
     }
     if (ns.every(n => !!n.textContent.trim())) {
         windowdiv.style.transform = 'translateX(-1010px)';
         windowdiv.style.position = 'absolute';
-        input2.style.transform = 'translateX(1010px)';
+        input2.style.transform = 'translateX(2010px)';
         input2.style.position = 'relative';
     }
     if (fs.every(f => !!f.textContent.trim())) {
         windowdiv.style.transform = 'translateX(-1010px)';
         windowdiv.style.position = 'absolute';
-        input4.style.transform = 'translateX(1010px)';
+        input4.style.transform = 'translateX(2010px)';
         input4.style.position = 'relative';
     }
     if (!!v1.textContent.trim()) {
         windowdiv.style.transform = 'translateX(-1010px)';
         windowdiv.style.position = 'absolute';
-        input6.style.transform = 'translateX(1010px)';
+        input6.style.transform = 'translateX(2010px)';
         input6.style.position = 'relative';
     }
 }
